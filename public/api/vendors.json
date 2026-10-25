@@ -1,0 +1,116 @@
+[
+  {
+    "id": "chinese-restaurant",
+    "name": "Chinese Muslim Restaurant",
+    "location": "Mahallah Ali, Cafeteria",
+    "openHours": "9:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "chi-1",
+        "name": "Beef Rice",
+        "description": "Rice cooked with beef and vegetables",
+        "price": 7.5,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "chi-2",
+        "name": "Mee Tarik",
+        "description": "Hand pulled noodles with beef slices",
+        "price": 9,
+        "category": "Noodles",
+        "available": true
+      },
+      {
+        "id": "chi-3",
+        "name": "Herbal Tea",
+        "description": "Tea with a blend of herbs and spices",
+        "price": 2.5,
+        "category": "Drinks",
+        "available": true
+      },
+      {
+        "id": "chi-4",
+        "name": "White Rice",
+        "description": "Steamed white rice",
+        "price": 2,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "chi-5",
+        "name": "Dried Chili Chicken",
+        "description": "Chicken braised with dried chili and spices",
+        "price": 4,
+        "category": "Side Dishes",
+        "available": true
+      },
+      {
+        "id": "chi-6",
+        "name": "Dry Noodles",
+        "description": "Stir fried hand pulled noodles with vegetables and soy sauce",
+        "price": 10,
+        "category": "Noodles",
+        "available": true
+      },
+      {
+        "id": "chi-7",
+        "name": "Beef Buns",
+        "description": "Steamed buns filled with minced beef and spices",
+        "price": 3,
+        "category": "Side Dishes",
+        "available": false
+      },
+      {
+        "id": "chi-8",
+        "name": "Iced Lemon Tea",
+        "description": "Lemon tea served with ice",
+        "price": 2.5,
+        "category": "Drinks",
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": "kafe-aminah",
+    "name": "Kafe Mahallah Aminah",
+    "location": "Mahallah Aminah, Ground Floor",
+    "openHours": "8:00 am - 9:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "ami-1",
+        "name": "Nasi Ayam Penyet",
+        "description": "Smashed fried chicken with sambal and rice",
+        "price": 9,
+        "category": "Rice",
+        "available": true
+      },
+      {
+        "id": "ami-2",
+        "name": "Air Bandung",
+        "description": "Rose syrup with milk",
+        "price": 3,
+        "category": "Drinks",
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": "friends-restaurant",
+    "name": "Placeholder",
+    "location": "-",
+    "openHours": "9:00 am - 10:00 pm",
+    "isOpen": false,
+    "menu": []
+  },
+  {
+    "id": "friends-restaurant-2",
+    "name": "Placeholder 2",
+    "location": "-",
+    "openHours": "9:00 am - 10:00 pm",
+    "isOpen": false,
+    "menu": []
+  }
+]

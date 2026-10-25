@@ -16,3 +16,10 @@ Add a new section every week, before you tag. Did not use AI? Write "None" under
 - What I asked for: Help with an error where App.jsx was not recognizing my file names.
 - What I kept, changed or rejected, and why: I restarted TypeScript since there is an error in the system, it mistakenly thought there is a file named Vendors.js in my folder when it is supposed to be vendors.js.
 - One thing the AI got wrong and how I fixed it: Gemini thought I named the file wrong, I used Copilot instead.
+
+## Week 3
+
+- Tool(s): ChatGPT
+- What I asked for: In CartItem.jsx, i asked to help with the adding the quantity the items. Also, in App.jsx i asked for help with showing the vendor cards and menu list. There were also errors in vendors.json which is resolved using ChatGPT.
+- What I kept, changed or rejected, and why: I kept most of the codes except the quantity adding. Most of the codes managed to resolve the errors, and it was align with our learnings.
+- One thing the AI got wrong and how I fixed it: The AI codes for adding the quantity was wrong, the button to add quantity did not work. I had to go back and check everything line by line and realized what the error was. I fixed the codes myself.
