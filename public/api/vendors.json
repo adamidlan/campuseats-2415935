@@ -1,13 +1,13 @@
 [
   {
-    "id": "chinese-restaurant",
+    "id": "2415935-chinese-restaurant",
     "name": "Chinese Muslim Restaurant",
     "location": "Mahallah Ali, Cafeteria",
     "openHours": "9:00 am - 10:00 pm",
     "isOpen": true,
     "menu": [
       {
-        "id": "chi-1",
+        "id": "2415935-chi-1",
         "name": "Beef Rice",
         "description": "Rice cooked with beef and vegetables",
         "price": 7.5,
@@ -15,7 +15,7 @@
         "available": true
       },
       {
-        "id": "chi-2",
+        "id": "2415935-chi-2",
         "name": "Mee Tarik",
         "description": "Hand pulled noodles with beef slices",
         "price": 9,
@@ -23,7 +23,7 @@
         "available": true
       },
       {
-        "id": "chi-3",
+        "id": "2415935-chi-3",
         "name": "Herbal Tea",
         "description": "Tea with a blend of herbs and spices",
         "price": 2.5,
@@ -31,7 +31,7 @@
         "available": true
       },
       {
-        "id": "chi-4",
+        "id": "2415935-chi-4",
         "name": "White Rice",
         "description": "Steamed white rice",
         "price": 2,
@@ -39,7 +39,7 @@
         "available": true
       },
       {
-        "id": "chi-5",
+        "id": "2415935-chi-5",
         "name": "Dried Chili Chicken",
         "description": "Chicken braised with dried chili and spices",
         "price": 4,
@@ -47,7 +47,7 @@
         "available": true
       },
       {
-        "id": "chi-6",
+        "id": "2415935-chi-6",
         "name": "Dry Noodles",
         "description": "Stir fried hand pulled noodles with vegetables and soy sauce",
         "price": 10,
@@ -57,7 +57,7 @@
         "endTime": "2026-10-26T22:00:00+08:00"
       },
       {
-        "id": "chi-7",
+        "id": "2415935-chi-7",
         "name": "Beef Buns",
         "description": "Steamed buns filled with minced beef and spices",
         "price": 3,
@@ -65,7 +65,7 @@
         "available": false
       },
       {
-        "id": "chi-8",
+        "id": "2415935-chi-8",
         "name": "Iced Lemon Tea",
         "description": "Lemon tea served with ice",
         "price": 2.5,
@@ -100,19 +100,181 @@
     ]
   },
   {
-    "id": "friends-restaurant",
-    "name": "Placeholder",
-    "location": "-",
-    "openHours": "9:00 am - 10:00 pm",
-    "isOpen": false,
-    "menu": []
+    "id": "2410493-jazz-coffee",
+    "name": "Jazz Coffee",
+    "location": "Mahallah Uthman, Block PG Parking Lot",
+    "openHours": "6:00 pm - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2410493-m1",
+        "name": "Ice Butter Cream Latte",
+        "description": "Coffee with creamy butter flavour",
+        "price": 11.5,
+        "category": "Drinks",
+        "available": true
+      },
+      {
+        "id": "2410493-m2",
+        "name": "Iced Coffee",
+        "description": "Chilled coffee",
+        "price": 8,
+        "category": "Drinks",
+        "available": true
+      },
+      {
+        "id": "2410493-m3",
+        "name": "Hot Latte",
+        "description": "Espresso with steamed milk",
+        "price": 9,
+        "category": "Drinks",
+        "available": true
+      },
+      {
+        "id": "2410493-m4",
+        "name": "Cream Puff",
+        "description": "Light pastry filled with cream",
+        "price": 4,
+        "category": "Pastries",
+        "available": true
+      },
+      {
+        "id": "2410493-m5",
+        "name": "Croissant",
+        "description": "Buttery, flaky pastry",
+        "price": 5,
+        "category": "Pastries",
+        "available": true
+      },
+      {
+        "id": "2410493-m6",
+        "name": "Tiramisu",
+        "description": "Coffee-flavoured layered dessert",
+        "price": 10,
+        "category": "Desserts",
+        "available": true
+      },
+      {
+        "id": "2410493-m7",
+        "name": "Kek Batik",
+        "description": "Chocolate biscuit cake",
+        "price": 5,
+        "category": "Desserts",
+        "available": true
+      },
+      {
+        "id": "2410493-m8",
+        "name": "Brownies",
+        "description": "Rich chocolate brownies",
+        "price": 6,
+        "category": "Desserts",
+        "available": true
+      }
+    ]
   },
   {
-    "id": "friends-restaurant-2",
-    "name": "Placeholder 2",
-    "location": "-",
-    "openHours": "9:00 am - 10:00 pm",
-    "isOpen": false,
-    "menu": []
+    "id": "2418711-my-restaurant",
+    "name": "Kek Tapak Kuda",
+    "location": "Mahallah Ali, Gombak, Selangor",
+    "openHours": "7:30 am - 7:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2418711-ktk-1",
+        "name": "Kek Tapak Kuda Matcha",
+        "description": "Made with original Japanese matcha ganache",
+        "price": 28.0,
+        "category": "Kek Tapak Kuda",
+        "available": true
+      },
+      {
+        "id": "2418711-ktk-2",
+        "name": "Kek Tapak Kuda Bueno",
+        "description": "Rich bueno flavor",
+        "price": 28.0,
+        "category": "Kek Tapak Kuda",
+        "available": true
+      },
+      {
+        "id": "2418711-ktk-3",
+        "name": "Kek Tapak Kuda Pistachio",
+        "description": "Classic pistachio taste",
+        "price": 35.0,
+        "category": "Kek Tapak Kuda",
+        "available": true
+      },
+      {
+        "id": "2418711-ktk-4",
+        "name": "Kek Tapak Kuda Chocolate",
+        "description": "Made by Original Matcha",
+        "price": 28.0,
+        "category": "Kek Tapak Kuda",
+        "available": true
+      },
+      {
+        "id": "2418711-ktk-5",
+        "name": "Kek Tapak Kuda Durian",
+        "description": "Rich durian flavor",
+        "price": 28.0,
+        "category": "Kek Tapak Kuda",
+        "available": true
+      },
+      {
+        "id": "2418711-ktk-6",
+        "name": "Kek Tapak Kuda Crunchy",
+        "description": "Classic biscoff taste",
+        "price": 28.0,
+        "category": "Kek Tapak Kuda",
+        "available": true
+      },
+      {
+        "id": "2418711-cc-4",
+        "name": "Cheesecake Chocolate",
+        "description": "Chocolate Belgium",
+        "price": 28.0,
+        "category": "Cheese Cake",
+        "available": true
+      },
+      {
+        "id": "2418711-cc-5",
+        "name": "Cheesecake Red Velvet",
+        "description": "Rich red velvet flavor",
+        "price": 28.0,
+        "category": "Cheese Cake",
+        "available": true
+      },
+      {
+        "id": "2418711-cc-6",
+        "name": "Cheesecake Pandan",
+        "description": "Classic pandan paste taste",
+        "price": 28.0,
+        "category": "Cheese Cake",
+        "available": true
+      },
+      {
+        "id": "2418711-m-1",
+        "name": "Mochi Matcha",
+        "description": "Made with original Japanese matcha ganache",
+        "price": 28.0,
+        "category": "Mochi",
+        "available": true
+      },
+      {
+        "id": "2418711-m-2",
+        "name": "Mochi Durian",
+        "description": "Rich durian flavor",
+        "price": 28.0,
+        "category": "Mochi",
+        "available": true
+      },
+      {
+        "id": "2418711-m-3",
+        "name": "Mochi Chocolate",
+        "description": "Made by Original Matcha",
+        "price": 28.0,
+        "category": "Mochi",
+        "available": true
+      }
+    ]
   }
 ]
