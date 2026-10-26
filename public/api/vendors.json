@@ -52,7 +52,9 @@
         "description": "Stir fried hand pulled noodles with vegetables and soy sauce",
         "price": 10,
         "category": "Noodles",
-        "available": true
+        "available": true,
+        "isDailySpecial": true,
+        "endTime": "2026-10-26T22:00:00+08:00"
       },
       {
         "id": "chi-7",

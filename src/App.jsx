@@ -5,6 +5,7 @@ import VendorCard from "./components/VendorCard";
 import MenuList from "./components/MenuList";
 import CartPage from "./components/CartPage";
 import { Loading, ErrorMessage } from "./components/Status";
+import DailySpecial from "./components/DailySpecial";
 
 function App() {
   const [vendors, setVendors] = useState([]);
@@ -161,7 +162,10 @@ function App() {
         onShowMenu={() => setView("menu")}
         onShowCart={() => setView("cart")}
       />
-      <main className="container">{content}</main>
+      <main className="container">
+        {view === "menu" && <DailySpecial />}
+        {content}
+      </main>
       <Footer />
     </>
   );

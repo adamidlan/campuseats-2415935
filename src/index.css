@@ -569,3 +569,23 @@ button.card:hover {
 .error {
   border-left: 4px solid #b3261e;
 }
+
+.countdown {
+  font-size: 0.9rem;
+  margin: 8px 0 12px;
+}
+
+.countdown strong {
+  color: #d94841;
+}
+
+.special-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-top: 8px;
+  border-radius: 12px;
+  background: #fff0d6;
+  color: #8a4b08;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
