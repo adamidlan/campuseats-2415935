@@ -1,7 +1,7 @@
 [
   {
     "id": "2415935-chinese-restaurant",
-    "name": "Chinese Muslim Restaurant",
+    "name": "Lim Chinese Muslim Restaurant",
     "location": "Mahallah Ali, Cafeteria",
     "openHours": "9:00 am - 10:00 pm",
     "isOpen": true,
@@ -54,7 +54,7 @@
         "category": "Noodles",
         "available": true,
         "isDailySpecial": true,
-        "endTime": "2026-10-26T22:00:00+08:00"
+        "endTime": "2026-10-30T22:00:00+08:00"
       },
       {
         "id": "2415935-chi-7",

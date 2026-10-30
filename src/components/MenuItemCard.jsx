@@ -4,7 +4,13 @@ function MenuItemCard({ item, onAdd }) {
       <div className="thumb" aria-hidden="true">
         {item.name.charAt(0)}
       </div>
-      <p className="tag">{item.category}</p>
+      <div className="menu-badges">
+        <span className="tag">{item.category}</span>
+
+        {item.isDailySpecial && (
+          <span className="special-tag">Daily Special</span>
+        )}
+      </div>
       <h3>{item.name}</h3>
       <p className="muted">{item.description}</p>
       <p className="price">RM {item.price.toFixed(2)}</p>

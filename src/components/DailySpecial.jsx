@@ -1,29 +1,31 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
-function DailySpecial({ item, onAdd, endTime }) {
-  if (!item) {
-    return null;
-  }
+function DailySpecial({ item, onAdd, endTime, vendorId, vendorName }) {
   const [timeLeft, setTimeLeft] = useState(() =>
     Math.max(0, new Date(endTime).getTime() - Date.now()),
   );
 
   useEffect(() => {
     const updateCountdown = () => {
-      setTimeLeft(Math.max(0, new Date(endTime).getTime() - Date.now()));
+      const remaining = new Date(endTime).getTime() - Date.now();
+      setTimeLeft(Number.isFinite(remaining) ? Math.max(0, remaining) : 0);
     };
 
     updateCountdown();
+
     const interval = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(interval);
   }, [endTime]);
 
+  if (!item) return null;
+
+  const isExpired = timeLeft <= 0;
   const hours = Math.floor(timeLeft / 3600000);
   const minutes = Math.floor((timeLeft % 3600000) / 60000);
   const seconds = Math.floor((timeLeft % 60000) / 1000);
 
-  const isExpired = new Date(endTime).getTime() <= Date.now();
   return (
     <div className="card menu-item">
       <div className="thumb" aria-hidden="true">
@@ -32,17 +34,17 @@ function DailySpecial({ item, onAdd, endTime }) {
 
       <div className="menu-badges">
         <span className="tag">{item.category}</span>
-
         <span className="special-tag">Daily Special</span>
       </div>
 
       <h3>{item.name}</h3>
       <p className="muted">{item.description}</p>
-
       <p className="price">RM {Number(item.price).toFixed(2)}</p>
 
       <p className="countdown">
-        {timeLeft > 0 ? (
+        {isExpired ? (
+          <strong>Today's special has ended.</strong>
+        ) : (
           <>
             Ends in:{" "}
             <strong>
@@ -51,20 +53,23 @@ function DailySpecial({ item, onAdd, endTime }) {
               {String(seconds).padStart(2, "0")}
             </strong>
           </>
-        ) : (
-          "Today's special has ended."
         )}
       </p>
-      {isExpired ? (
+
+      {vendorId && (
+        <p>
+          <Link to={`/vendor/${vendorId}`}>
+            View {vendorName || "vendor"}'s menu
+          </Link>
+        </p>
+      )}
+
+      {isExpired || item.available === false ? (
         <button className="btn" disabled>
           Unavailable
         </button>
       ) : (
-        <button
-          className="btn"
-          onClick={() => onAdd(item)}
-          disabled={timeLeft === 0}
-        >
+        <button className="btn" onClick={() => onAdd?.(item)} disabled={!onAdd}>
           Add to cart
         </button>
       )}
