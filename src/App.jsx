@@ -1,3 +1,8 @@
+//Setting up navigation between different pages.
+//Providing a shared shopping cart throughout the application.
+//Displaying a common layout across all pages.
+//Defining which component should appear for each URL.
+
 import { BrowserRouter, Routes, Route } from "react-router";
 import { CartProvider } from "./context/CartProvider.jsx";
 import Layout from "./components/Layout.jsx";
@@ -11,6 +16,7 @@ import DailySpecial from "./components/DailySpecial";
 function App() {
   return (
     <BrowserRouter>
+      //ReactRouter, check url and display appropriate page based on route
       <CartProvider>
         <Routes>
           <Route element={<Layout />}>
