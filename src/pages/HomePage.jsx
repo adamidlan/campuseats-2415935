@@ -3,11 +3,16 @@ import VendorCard from "../components/VendorCard.jsx";
 import { Loading, ErrorMessage } from "../components/Status.jsx";
 import DailySpecial from "../components/DailySpecial.jsx";
 import { useCart } from "../hooks/useCart.js";
+import { Link } from "react-router";
+import { useAuth } from "../hooks/useAuth.js";
 
 function HomePage() {
-  const { vendors, loading, error, reload } = useVendors();
+  const { vendors, loading: vendorsLoading, error, reload } = useVendors();
   const { addToCart } = useCart();
-  if (loading) return <Loading />;
+  const { user, loading: authLoading } = useAuth();
+
+  if (vendorsLoading || authLoading) return <Loading />;
+
   if (error) return <ErrorMessage message={error} onRetry={reload} />;
 
   const dailySpecials = vendors.flatMap((vendor) =>
@@ -22,25 +27,35 @@ function HomePage() {
 
   return (
     <section>
-      <h2 className="section-title">Today's Specials</h2>
+      {user ? (
+        <>
+          <h2 className="section-title">
+            Today's special for {user.displayName || user.email}
+          </h2>
 
-      {dailySpecials.length === 0 ? (
-        <p className="muted">No daily specials available.</p>
+          {dailySpecials.length === 0 ? (
+            <p className="muted">No daily specials available.</p>
+          ) : (
+            <div className="vendor-grid">
+              {dailySpecials.map((item) => (
+                <DailySpecial
+                  key={item.id}
+                  item={item}
+                  vendorId={item.vendorId}
+                  vendorName={item.vendorName}
+                  onAdd={addToCart}
+                />
+              ))}
+            </div>
+          )}
+        </>
       ) : (
-        <div className="vendor-grid">
-          {dailySpecials.map((item) => (
-            <DailySpecial
-              key={item.id}
-              item={item}
-              endTime={item.endTime}
-              vendorId={item.vendorId}
-              vendorName={item.vendorName}
-              onAdd={addToCart}
-            />
-          ))}
+        <div className="card">
+          <h2 className="section-title">Log in to see today's specials</h2>
+
+          <p className="muted">Sign in to see today's specials.</p>
         </div>
       )}
-
       <h2 className="section-title">Choose a vendor</h2>
 
       <div className="vendor-grid">

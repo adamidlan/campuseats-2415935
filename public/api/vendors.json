@@ -53,8 +53,7 @@
         "price": 10,
         "category": "Noodles",
         "available": true,
-        "isDailySpecial": true,
-        "endTime": "2026-11-05T22:00:00+08:00"
+        "isDailySpecial": true
       },
       {
         "id": "2415935-chi-7",

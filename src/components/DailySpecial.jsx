@@ -1,27 +1,13 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { useDailySpecialSchedule } from "../hooks/useDailySpecialSchedule.js";
 
-function DailySpecial({ item, onAdd, endTime, vendorId, vendorName }) {
-  const [timeLeft, setTimeLeft] = useState(() =>
-    Math.max(0, new Date(endTime).getTime() - Date.now()),
-  );
-
-  useEffect(() => {
-    const updateCountdown = () => {
-      const remaining = new Date(endTime).getTime() - Date.now();
-      setTimeLeft(Number.isFinite(remaining) ? Math.max(0, remaining) : 0);
-    };
-
-    updateCountdown();
-
-    const interval = setInterval(updateCountdown, 1000);
-
-    return () => clearInterval(interval);
-  }, [endTime]);
+function DailySpecial({ item, onAdd, vendorId, vendorName }) {
+  const { isAvailable, timeLeft, countdownLabel } = useDailySpecialSchedule();
 
   if (!item) return null;
 
-  const isExpired = timeLeft <= 0;
+  const isExpired = !isAvailable || item.available === false;
+
   const hours = Math.floor(timeLeft / 3600000);
   const minutes = Math.floor((timeLeft % 3600000) / 60000);
   const seconds = Math.floor((timeLeft % 60000) / 1000);
@@ -42,18 +28,11 @@ function DailySpecial({ item, onAdd, endTime, vendorId, vendorName }) {
       <p className="price">RM {Number(item.price).toFixed(2)}</p>
 
       <p className="countdown">
-        {isExpired ? (
-          <strong>Today's special has ended.</strong>
-        ) : (
-          <>
-            Ends in:{" "}
-            <strong>
-              {String(hours).padStart(2, "0")}:
-              {String(minutes).padStart(2, "0")}:
-              {String(seconds).padStart(2, "0")}
-            </strong>
-          </>
-        )}
+        {countdownLabel}:{" "}
+        <strong>
+          {String(hours).padStart(2, "0")}:{String(minutes).padStart(2, "0")}:
+          {String(seconds).padStart(2, "0")}
+        </strong>
       </p>
 
       {vendorId && (
@@ -64,7 +43,7 @@ function DailySpecial({ item, onAdd, endTime, vendorId, vendorName }) {
         </p>
       )}
 
-      {isExpired || item.available === false ? (
+      {isExpired ? (
         <button className="btn" disabled>
           Unavailable
         </button>
