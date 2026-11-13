@@ -31,3 +31,10 @@ Add a new section every week, before you tag. Did not use AI? Write "None" under
 - What I asked for: Firstly, there was an error where my vendor cards and menu cards were not showing in the home page. Chatgpt helped find where my mistake was. Then, chatgpt helped me in updating my personal feature, daily special, based on the changes in week 4. I also asked it to explain the codes for the daily special.
 - What I kept, changed or rejected, and why: The error i had was in vendorcard.jsx, where the return line was inside the Link. I kept the changes made for the code suggested by chatgpt. All of the daily special codes were kept.
 - One thing the AI got wrong and how I fixed it: The ai thought there was an error in vendors.json and the codes calling for vendors.json. I checked the previous lab sheet, and there was nothing wrong with it.
+
+## Week 5
+
+- Tool(s): ChatGPT
+- What I asked for: I asked for help with an error and also with updating my personal feature
+- What I kept, changed or rejected, and why: I kept the codes for most of the personal feature part, and decided to create a new hook for the personal feature called useDailySpecialSchedule.
+- One thing the AI got wrong and how I fixed it: The AI gave a lot of debugging options for the error which didn't help. I decided to ask a friend that had already completed his task, and the error was in some lines of code in Register Page.
