@@ -38,3 +38,10 @@ Add a new section every week, before you tag. Did not use AI? Write "None" under
 - What I asked for: I asked for help with an error and also with updating my personal feature
 - What I kept, changed or rejected, and why: I kept the codes for most of the personal feature part, and decided to create a new hook for the personal feature called useDailySpecialSchedule.
 - One thing the AI got wrong and how I fixed it: The AI gave a lot of debugging options for the error which didn't help. I decided to ask a friend that had already completed his task, and the error was in some lines of code in Register Page.
+
+## Week 6
+
+- Tool(s): ChatGPT
+- What I asked for: There was an error in HomePage where a function from my personal feature was no longer working properly due to additions from week 6 codes
+- What I kept, changed or rejected, and why: I kept the updated code for now (before updating personal feature for week 6)
+- One thing the AI got wrong and how I fixed it: None

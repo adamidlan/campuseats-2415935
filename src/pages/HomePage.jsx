@@ -16,13 +16,7 @@ function HomePage() {
   if (error) return <ErrorMessage message={error} onRetry={reload} />;
 
   const dailySpecials = vendors.flatMap((vendor) =>
-    vendor.menu
-      .filter((item) => item.isDailySpecial)
-      .map((item) => ({
-        ...item,
-        vendorId: vendor.id,
-        vendorName: vendor.name,
-      })),
+    (vendor.menu ?? []).filter((item) => item.isDailySpecial),
   );
 
   return (
