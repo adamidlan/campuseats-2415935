@@ -45,3 +45,4 @@ Add a new section every week, before you tag. Did not use AI? Write "None" under
 - What I asked for: There was an error in HomePage where a function from my personal feature was no longer working properly due to additions from week 6 codes
 - What I kept, changed or rejected, and why: I kept the updated code for now (before updating personal feature for week 6)
 - One thing the AI got wrong and how I fixed it: None
+- For the personal feature, I asked ChatGPT to help with integrating it to Firebase and Firestore. Also, AI helped with the implementation of DailySpecial.jsx and HomePage.jsx so the feature workd with Firestore updates. I reviewed and tested all suggestions before implementing it.

@@ -1,4 +1,10 @@
-import { collection, doc, onSnapshot, writeBatch } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  onSnapshot,
+  writeBatch,
+  Timestamp,
+} from "firebase/firestore";
 import { db } from "../firebase.js";
 // Every subscribe function returns an unsubscribe function for useEffect cleanup.
 export function subscribeToVendors(onData, onError) {
@@ -30,9 +36,24 @@ export function subscribeToMenu(vendorId, onData, onError) {
 export async function seedDemoData(vendors) {
   const batch = writeBatch(db);
   for (const { menu, id, ...vendor } of vendors) {
+    // Save vendor document
     batch.set(doc(db, "vendors", id), vendor);
-    for (const { id: itemId, ...item } of menu) {
-      batch.set(doc(db, "vendors", id, "menu", itemId), item);
+
+    for (const { id: itemId, isDailySpecial, ...item } of menu ?? []) {
+      const menuData = {
+        ...item,
+        special: isDailySpecial ?? false,
+      };
+
+      if (isDailySpecial) {
+        // Initial expiry: 10 PM today (Malaysia time)
+        const expiry = new Date();
+        expiry.setHours(22, 0, 0, 0);
+
+        menuData.specialEndsAt = Timestamp.fromDate(expiry);
+      }
+
+      batch.set(doc(db, "vendors", id, "menu", itemId), menuData);
     }
   }
   await batch.commit();

@@ -1,12 +1,27 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { useDailySpecialSchedule } from "../hooks/useDailySpecialSchedule.js";
 
 function DailySpecial({ item, onAdd, vendorId, vendorName }) {
-  const { isAvailable, timeLeft, countdownLabel } = useDailySpecialSchedule();
+  const { isAvailable, countdownLabel } = useDailySpecialSchedule();
+  const [now, setNow] = useState(Date.now());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNow(Date.now());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   if (!item) return null;
 
-  const isExpired = !isAvailable || item.available === false;
+  // Firestore Timestamp -> JavaScript milliseconds
+  const expiryTime = item.specialEndsAt?.toMillis?.() ?? 0;
+  const timeLeft = Math.max(0, expiryTime - now);
+
+  const isExpired =
+    !isAvailable || item.available === false || !item.special || timeLeft <= 0;
 
   const hours = Math.floor(timeLeft / 3600000);
   const minutes = Math.floor((timeLeft % 3600000) / 60000);

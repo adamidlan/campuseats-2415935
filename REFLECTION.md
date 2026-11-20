@@ -24,3 +24,14 @@ setOrders() is not called directly from the Orders page because Firestore's onSn
 The orders collection is stored at the top level because orders need to be accessed independently from vendors. This makes it easier to retrieve all orders belonging to a particular student by querying the studentUid field, even when the orders come from different vendors. Each order also stores a copy of vendorName, item names and prices instead of only storing their IDs because it may change over time. By keeping a copy of these details when the order is placed, the order history can still display the original information even if the vendor updates or removes a menu item later. This makes displaying order history easier because the application does not need to retrieve the vendor and menu documents separately every time an order is displayed.
 
 3. Your personal feature: which Firestore path and fields hold its data, and which line of your code reads it? Paste that line.
+
+The Daily Special data is stored in vendors/{vendorsId}/menu/{itemId}
+e.g.
+vendors/lim-chinese-restaurant/menu/2415935-chi-6
+
+special(Boolean): indicates menu is daily special
+specialEndsAt(Timestamp): store the expiry date and countdown
+
+const expiryTime = item.specialEndsAt?.toMillis?.() ?? 0;
+this code reads the expiry timestamp in DailySpecial.jsx
+The countdown is calculated using this timestamp and updated every second. Firestore's onSnapshot() subscription allows the application to receive changes when the expiry timestamp is edited in Firebase Console.
